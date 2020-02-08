@@ -20,8 +20,9 @@ jobs:
     - name: Tidy/vendor
       run: |
         go mod tidy && go mod vendor
-        git status
 
     - name: commit / push
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        git add go.mod go.sum vendor/ && git commit -m 'mod tidy/vendor'  && git push
+        git add go.mod go.sum vendor/ && git commit -m 'mod tidy/vendor' && git push
