@@ -1,11 +1,9 @@
 package main
 
 import (
-	"fmt"
-
-	"github.com/pkg/errors"
+	"github.com/jstncbllr/test_lib"
 )
 
 func main() {
-	fmt.Println(errors.New("hi"))
+	test_lib.Foo()
 }
