@@ -21,3 +21,7 @@ jobs:
       run: |
         go mod tidy && go mod vendor
         git status
+
+    - name: commit / push
+      run: |
+        git add go.mod go.sum vendor/ && git commit -m 'mod tidy/vendor'  && git push
